@@ -14,7 +14,7 @@
 		define('NS_FILE', NS_IMAGE);
 	}
 	
-	$wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'specialpage'][] = array(
+	$wgExtensionCredits['semantic'][] = array(
 		'path' => __FILE__,
 		'name' => 'Semantic Image Annotator',
 		'version' => '0.5',
