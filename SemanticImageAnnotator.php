@@ -15,10 +15,11 @@
 	}
 	
 	$wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'specialpage'][] = array(
+		'path' => __FILE__,
 		'name' => 'Semantic Image Annotator',
-		'version' => '0.1',
+		'version' => '0.5',
 		'author' => 'Felix Obenauer',
-		'url' => 'http://mediawiki.org',
+		'url' => 'http://www.mediawiki.org/wiki/Extension:Semantic_Image_Annotator',
 		'descriptionmsg'  => 'sia-description',
 	);
 	
