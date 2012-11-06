@@ -1,4 +1,4 @@
-/*global $, document, divDebug, divResize, divToolbox,
+/*global $, document, divResize, divToolbox,
  divShapeKeep, wgFormattedNamespaces, wgTitle, wgUserName, wgScript,
  ext, wgScriptPath, getAnnotations, randomString*/
 /*
@@ -34,7 +34,6 @@ $(document).ready(function () {
     "use strict";
     //Append buttons
     $("#file").prepend(divToolbox);
-    //$('body').append(divDebug);
     $('body').append(divShapeKeep);
     //Start the annotation View
     $('#buttonAnnotate').click(function () {
