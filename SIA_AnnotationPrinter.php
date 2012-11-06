@@ -4,9 +4,6 @@
 	* Provides a custom ResultPrinter for displaying images with annotations that result from queries.
 	* @author Felix Obenauer
 	*/
-if( !defined( 'MEDIAWIKI' ) ) {
-	die( 'Not an entry point.' );
-}
 
 class SIA_AnnotationPrinter extends SMWResultPrinter {
 	protected $paramWidth;
@@ -130,5 +127,3 @@ class SIA_AnnotationPrinter extends SMWResultPrinter {
 	}
 }
 
-?>
-	

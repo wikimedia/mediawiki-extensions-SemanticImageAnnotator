@@ -90,4 +90,3 @@ function getAnnotations($annotatedImage){
 	$returnString .= ']}';
 	return($returnString);
 }
-?>
