@@ -7,18 +7,6 @@
  *@author Felix Obenauer
  */
 
-var divDebug =
-    '<div id="divDebug" style="position:fixed; top:0px; right:0px; width:250px; height: 600px; background-color:green;">' +
-    '<p id="debugf1"></P>' +
-    '<p id="debugf2"></P>' +
-    '<p id="debugf3"></P>' +
-    '<p id="debugf4"></P>' +
-    '<p id="debugf5"></P>' +
-    '<p id="debugf6"></P>' +
-    '<p id="debugf7"></P>' +
-    '<p id="debugf8"></P>' +
-    '</div>';
-
 var divResize =
     '<div id="SIAresizeDiv">' +
     '<img id="buttondecreaseimagesize" src="' + wgExtensionAssetsPath + '/SemanticImageAnnotator/images/minus.png">' +

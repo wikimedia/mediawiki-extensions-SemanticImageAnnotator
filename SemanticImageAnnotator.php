@@ -78,18 +78,11 @@
 	$wgHooks['OutputPageBeforeHTML'][] = 'hookOutputPageBeforeHTML';
 	$wgHooks['smwInitProperties'][] = 'initProperties';
 	
-	function hookOutputPageBeforeHTML (&$out, &$text) {
-		
-		//$debug = print_r($out,true);
-		// get current article to find out namespace
-		//global $wgArticle, $wgJsMimeType, $wgScriptPath, $wgExtensionAssetsPath;
-		//$jsFolder = $wgExtensionAssetsPath.'/SemanticImageAnnotator/scripts';		
-		
+	function hookOutputPageBeforeHTML (&$out, &$text) {		
 		
 		if($out->getTitle()->getNamespace() == 6) {		//6 is the File Namespace
 			$out->includeJQuery(); 
 			$out->addModules('ext.SemanticImageAnnotator');
-			//$out->addModules('ext.SemanticImageAnnotator.SemanticFormsAssets');
 		}
 		return true;
 	}

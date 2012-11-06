@@ -9,7 +9,6 @@ if( !defined( 'MEDIAWIKI' ) ) {
 }
 
 class SIA_AnnotationPrinter extends SMWResultPrinter {
-	//protected $m_isDebugSet = true;
 	protected $paramWidth;
 	
 	public function __construct( $format, $inline, $useValidator = false ) {
