@@ -17,14 +17,14 @@ if (!defined('NS_FILE')) {
 $wgExtensionCredits['semantic'][] = array(
 	'path' => __FILE__,
 	'name' => 'Semantic Image Annotator',
-	'version' => '0.5',
+	'version' => '0.6.0',
 	'author' => 'Felix Obenauer',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Semantic_Image_Annotator',
 	'descriptionmsg'  => 'sia-description',
 );
 
-$dir = dirname(__FILE__);
-$wgExtensionMessagesFiles['SemanticImageAnnotator'] = "$dir/languages/SIA_Messages.php";
+$wgMessagesDirs['SemanticImageAnnotator'] = __DIR__ . '/i18n';
+$wgExtensionMessagesFiles['SemanticImageAnnotator'] = __DIR__ . "/languages/SIA_Messages.php";
 
 include_once('SIA_AjaxFunctions.php');
 
