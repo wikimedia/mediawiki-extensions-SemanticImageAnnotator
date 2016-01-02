@@ -88,7 +88,6 @@ $wgHooks['smwInitProperties'][] = 'initProperties';
 function hookOutputPageBeforeHTML ( OutputPage &$out, &$text ) {
 
 	if( $out->getTitle()->getNamespace() == 6 ) {		//6 is the File Namespace
-		$out->includeJQuery();
 		$out->addModules('ext.SemanticImageAnnotator');
 	}
 
