@@ -10,8 +10,8 @@ function removeAnnotation($annotationID){
 	$article->doDelete('ImageAnnotation removed');
 	return($annotationID);
 }
-	
-function writeAnnotationProperties($newPageName, $annotatedImage, $imageURL, $coords,$createdBy){
+
+function writeAnnotationProperties($newPageName, $annotatedImage, $imageURL, $coords, $createdBy){
 	$newTitle = Title::newFromText($newPageName);
 	$newArticle = new Article($newTitle);
 	$content = '';
@@ -21,7 +21,8 @@ function writeAnnotationProperties($newPageName, $annotatedImage, $imageURL, $co
 	$content .= '[[SIArectangleCoordinates::'.$coords.'| ]]'."\n";
 	$content .= '[[SIAcreatedBy::'.$createdBy.'| ]]'."\n";
 	$content .= '[[Category:ImageAnnotation]]'."\n";
-	$newArticle->doEdit($content, 'Created by Semantic Image Annotator');
+	$contentObject = ContentHandler::makeContent( $content, $newTitle );
+	$newArticle->doEditContent($contentObject, 'Created by Semantic Image Annotator');
 	return ('success');
 }
 
@@ -35,7 +36,7 @@ function getAnnotations($annotatedImage){
                 $new = version_compare($vers, '1.7', '>=');
             }
         }
-        
+
         $returnString = '{"shapes":[';
         $queryString = '[[SIAannotatedImage::'.$annotatedImage.']]';
         $params = array();
@@ -43,7 +44,7 @@ function getAnnotations($annotatedImage){
         $params['mainlabel'] = 'result';
         #$params = ['order'];
         #$params = ['sort'];
-        
+
 	if($new){
             $params['order'] = array('asc');
             $params['sort'] = array('SIAannotatedImage');
@@ -52,7 +53,7 @@ function getAnnotations($annotatedImage){
             $params['order'] = 'asc';
             $params['sort'] = 'SIAannotatedImage';
         }
-        
+
 	//Generate all the extra printouts, eg all properties to retrieve:
 	$printmode = SMWPrintRequest::PRINT_PROP;
 	$customPrintouts = array(	'coordinates' 	=> 'SIArectangleCoordinates',
@@ -69,17 +70,17 @@ function getAnnotations($annotatedImage){
 	$query  = SMWQueryProcessor::createQuery( $queryString, $params, $context, $format, $extraprintouts );
 	$store = smwfGetStore(); // default store
 	$res = $store->getQueryResult( $query );
-	
+
 	$shapeCounter = 0;
 	while( ($resArrayArray = $res->getNext()) != false){	//Array of SMWResultArray Objects, eg. all retrieved Pages
 		$shapeCounter++;
 
 		if($shapeCounter > 1) $returnString.=',';
 		$returnString.='{';
-		foreach($resArrayArray as $resArray){				//SMWResultArray-Object, column of resulttable (pagename or propertyvalue)			
+		foreach($resArrayArray as $resArray){				//SMWResultArray-Object, column of resulttable (pagename or propertyvalue)
 			$currentPrintRequestLabel = $resArray->getPrintRequest()->getLabel();	//The label as defined in the above array
 			if($currentPrintRequestLabel == 'coordinates'){
-				$currentResultPage = $resArray->getResultSubject();				
+				$currentResultPage = $resArray->getResultSubject();
 				$currentID = $currentResultPage->getTitle()->getFullText();
 				$currentCoords = $resArray->getNextDataItem()->getSerialization();
 				$returnString.='"coords":"'.$currentCoords.'","id":"'.$currentID.'"';
