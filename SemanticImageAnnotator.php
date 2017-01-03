@@ -19,7 +19,7 @@ $wgExtensionCredits['semantic'][] = array(
 	'name' => 'Semantic Image Annotator',
 	'version' => '0.6.0',
 	'author' => 'Felix Obenauer',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:Semantic_Image_Annotator',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:Semantic_Image_Annotator',
 	'descriptionmsg'  => 'sia-description',
 );
 
