@@ -24,7 +24,6 @@ $wgExtensionCredits['semantic'][] = array(
 );
 
 $wgMessagesDirs['SemanticImageAnnotator'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['SemanticImageAnnotator'] = __DIR__ . "/languages/SIA_Messages.php";
 
 include_once('SIA_AjaxFunctions.php');
 
