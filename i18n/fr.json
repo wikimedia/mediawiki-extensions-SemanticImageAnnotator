@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Urhixidur"
 		]
 	},
 	"sia-description": "Annoter sémantiquement les images et rechercher des annotations",
 	"sia-comment": "commentaire",
 	"sia-buttonannotate": "Annoter cette image",
-	"sia-resize": "Retailler l’image"
+	"sia-resize": "Redimensionner l’image"
 }
