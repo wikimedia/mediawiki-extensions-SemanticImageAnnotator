@@ -7,12 +7,6 @@
 if( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
-/**
- * For older versions of mediawiki, which don't support NS_FILE.
- */
-if (!defined('NS_FILE')) {
-	define('NS_FILE', NS_IMAGE);
-}
 
 $wgExtensionCredits['semantic'][] = array(
 	'path' => __FILE__,
