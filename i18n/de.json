@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Felix Obenauer"
+			"Felix Obenauer",
+			"Kghbln"
 		]
 	},
-	"sia-description": "Füge Bildern semantische Annotationen hinzu und frage diese ab",
+	"sia-description": "Ermöglicht es, Bildern semantische Annotationen hinzuzufügen",
 	"sia-comment": "Kommentar",
-	"sia-buttonannotate": "Dieses Bild annotieren",
+	"sia-buttonannotate": "Bild annotieren",
 	"sia-resize": "Bildgröße ändern"
 }
