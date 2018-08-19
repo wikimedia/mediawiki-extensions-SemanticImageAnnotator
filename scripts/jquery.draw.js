@@ -2,7 +2,7 @@
  * jQuery Plugin Draw v1.3.0
  * Requires jQuery 1.2.1+ (Not tested with earlier versions).
  * Based off of the work of Walter Zorn. In fact I've included his copyright as well.
- * I removed the draw string functionality, becuase really if you don't know how to create text in html you really shouldn't be doing this.. 
+ * I removed the draw string functionality, because really if you don't know how to create text in html you really shouldn't be doing this.. 
  * In fact, pack up your computer and take up knitting.
  *
  * Copyright (c) 2008 Aaron E. [jquery at happinessinmycheeks dot com] 
