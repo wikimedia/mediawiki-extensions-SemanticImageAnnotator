@@ -13,7 +13,6 @@ function removeAnnotation($annotationID){
 
 function writeAnnotationProperties($newPageName, $annotatedImage, $imageURL, $coords, $createdBy){
 	$newTitle = Title::newFromText($newPageName);
-	$newArticle = new Article($newTitle);
 	$content = '';
 	$content .= '{{ImageAnnotation}}';
 	$content .= '[[SIAannotatedImage::'.$annotatedImage.'| ]]'."\n";
@@ -22,7 +21,7 @@ function writeAnnotationProperties($newPageName, $annotatedImage, $imageURL, $co
 	$content .= '[[SIAcreatedBy::'.$createdBy.'| ]]'."\n";
 	$content .= '[[Category:ImageAnnotation]]'."\n";
 	$contentObject = ContentHandler::makeContent( $content, $newTitle );
-	$newArticle->doEditContent($contentObject, 'Created by Semantic Image Annotator');
+	WikiPage::factory($newTitle)->doEditContent($contentObject, 'Created by Semantic Image Annotator');
 	return ('success');
 }
 
